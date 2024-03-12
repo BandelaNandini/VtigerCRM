@@ -2,6 +2,8 @@ package mvnPractice;
 
 import org.testng.annotations.Test;
 
+//This comment is to check GIT CONFLICT
+
 public class Test2 {
 	@Test
 	public void demo1() {
