@@ -9,7 +9,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-	<profiles>
+	<!-- <profiles>
 		<profile>
 			<id>mvnpractice</id>
 			<build>
@@ -45,7 +45,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>contact</id>
+			<id>contact</id> -->
 			<build>
 				<plugins>
 					<plugin>
@@ -60,7 +60,7 @@
 					</plugin>
 				</plugins>
 			</build>
-		</profile>
+		<!-- </profile>
 		<profile>
 			<id>lead</id>
 			<build>
@@ -96,7 +96,7 @@
 			</build>
 		</profile>
 
-	</profiles>
+	</profiles>-->
 
 	<dependencies>
 		<!--
