@@ -2,6 +2,8 @@ package mvnPractice;
 
 import org.testng.annotations.Test;
 
+//This comment is used check branches, pull request and merge
+
 public class Test1 {
 	
 	@Test
