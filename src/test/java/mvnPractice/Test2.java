@@ -1,6 +1,7 @@
 package mvnPractice;
 
 import org.testng.annotations.Test;
+//This is to check particular method execution in maven command line
 
 public class Test2 {
 	@Test
