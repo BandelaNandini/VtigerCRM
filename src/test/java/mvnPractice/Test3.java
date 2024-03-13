@@ -2,6 +2,8 @@ package mvnPractice;
 
 import org.testng.annotations.Test;
 
+//This comment is to check poll scm in jenkins
+
 public class Test3 {
 	@Test
 	public void demo1() {
