@@ -42,7 +42,7 @@ public class WebDriverUtility {
 		switch (browser) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			//System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");
+			// System.setProperty("webdriver.chrome.driver","./src/main/resources/chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
 		case "edge":
@@ -51,7 +51,6 @@ public class WebDriverUtility {
 			break;
 		default:
 			System.out.println("Invalid Browser");
-
 		}
 		driver.manage().window().maximize();
 		return driver;
@@ -115,7 +114,7 @@ public class WebDriverUtility {
 	 */
 	public void mouseHoverToElement(WebElement element) {
 		Actions action = new Actions(driver);
-		action.contextClick(element).perform();
+		action.moveToElement(element).perform();
 	}
 
 	/**

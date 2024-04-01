@@ -5,24 +5,26 @@ import java.util.Map;
 import org.testng.annotations.Test;
 import generic_Utilities.BaseClass;
 import generic_Utilities.IConstantPath;
+import pomPages.PageObjectManager;
 
 public class CreateOrgTest extends BaseClass {
+	PageObjectManager pageObjects;
 
 	@Test
 	public void createNewOrgTest() throws InterruptedException {
 		home.clickOrganizations();
-		soft.assertEquals(org.getPageHeader(), "Organizations");
-		org.clickPlusButton();
-		soft.assertEquals(createOrg.getPageHeader(), "Creating New Organization");
+		soft.assertEquals(pageObjects.getOrganizationsPage().getPageHeader(), "Organizations");
+		pageObjects.getOrganizationsPage().clickPlusButton();
+		soft.assertEquals(pageObjects.getCreateNewOrgPage().getPageHeader(), "Creating New Organization");
 
 		Map<String, String> map = excel.readFromExcel("Create Organization", "OrganizationsTestData");
 		String orgName = map.get("Organization Name") + jutil.generateRandom(100);
-		createOrg.setOrgName(orgName);
-		createOrg.clickSave();
+		pageObjects.getCreateNewOrgPage().setOrgName(orgName);
+		pageObjects.getCreateNewOrgPage().clickSave();
 		Thread.sleep(3000);
-		soft.assertTrue(newOrg.getPageHeader().contains(orgName));
-		newOrg.clickOrgLink();
-		if (org.getNewOrgName().equals(orgName)) {
+		soft.assertTrue(pageObjects.getNewOrgDetailsPage().getPageHeader().contains(orgName));
+		pageObjects.getNewOrgDetailsPage().clickOrgLink();
+		if (pageObjects.getOrganizationsPage().getNewOrgName().equals(orgName)) {
 			System.out.println("test pass");
 			excel.updatedTestStatus("Create Organization", "pass", IConstantPath.EXCEL_FILE_PATH,
 					"OrganizationsTestData");
@@ -32,7 +34,7 @@ public class CreateOrgTest extends BaseClass {
 					"OrganizationsTestData");
 		}
 		
-		soft.assertEquals(org.getNewOrgName(), orgName);
+		soft.assertEquals(pageObjects.getOrganizationsPage().getNewOrgName(), orgName);
 		soft.assertAll();
 
 	}

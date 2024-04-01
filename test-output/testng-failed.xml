@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testScripts.CreateAndDeleteLeadTest">
+      <class name="testScripts.CreateNewEvent_Datepicker">
         <methods>
-          <include name="classTeardown"/>
-          <include name="createAndDeleteLeadTest"/>
-          <include name="methodSetup"/>
-          <include name="methodTearDown"/>
-          <include name="classSetup"/>
+          <include name="createEventTest"/>
         </methods>
-      </class> <!-- testScripts.CreateAndDeleteLeadTest -->
+      </class> <!-- testScripts.CreateNewEvent_Datepicker -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -25,7 +25,6 @@ public class LeadsPage {
 	@FindBy(xpath = "//input[@value='Delete']")
 	private WebElement deleteButton;
 	
-	
 	@FindBy(xpath="//table[@class='lvt small']/tbody/tr/td[3]/a")
 	private List<WebElement> leadNames;
 	

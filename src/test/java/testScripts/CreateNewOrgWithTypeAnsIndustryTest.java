@@ -6,28 +6,29 @@ import org.testng.annotations.Test;
 
 import generic_Utilities.BaseClass;
 import generic_Utilities.IConstantPath;
+import pomPages.PageObjectManager;
 
 public class CreateNewOrgWithTypeAnsIndustryTest extends BaseClass {
-
+PageObjectManager pageObjects;
 	@Test
 	public void createNewOrgWithTypeAndIndustryTest() throws InterruptedException {
 		home.clickOrganizations();
-		soft.assertEquals(org.getPageHeader(), "Organizations");
-		org.clickPlusButton();
-		soft.assertEquals(createOrg.getPageHeader(), "Creating New Organization");
+		soft.assertEquals(pageObjects.getOrganizationsPage().getPageHeader(), "Organizations");
+		pageObjects.getOrganizationsPage().clickPlusButton();
+		soft.assertEquals(pageObjects.getCreateNewOrgPage().getPageHeader(), "Creating New Organization");
 
 
 		Map<String, String> map = excel.readFromExcel("Create Organization With Industry And Type",
 				"OrganizationsTestData");
 		String orgName = map.get("Organization Name") + jutil.generateRandom(100);
-		createOrg.setOrgName(orgName);
-		createOrg.selectIndustry(web, map.get("Industry"));
-		createOrg.selectType(web, map.get("Type"));
-		createOrg.clickSave();
-		soft.assertTrue(newOrg.getPageHeader().contains(orgName));
+		pageObjects.getCreateNewOrgPage().setOrgName(orgName);
+		pageObjects.getCreateNewOrgPage().selectIndustry(web, map.get("Industry"));
+		pageObjects.getCreateNewOrgPage().selectType(web, map.get("Type"));
+		pageObjects.getCreateNewOrgPage().clickSave();
+		soft.assertTrue(pageObjects.getNewOrgDetailsPage().getPageHeader().contains(orgName));
 		Thread.sleep(3000);
-		newOrg.clickOrgLink();
-		if (org.getNewOrgName().equals(orgName)) {
+		pageObjects.getNewOrgDetailsPage().clickOrgLink();
+		if (pageObjects.getOrganizationsPage().getNewOrgName().equals(orgName)) {
 			System.out.println("test pass");
 			excel.updatedTestStatus("Create Organization With Industry And Type", "pass", IConstantPath.EXCEL_FILE_PATH,
 					"OrganizationsTestData");
@@ -36,7 +37,7 @@ public class CreateNewOrgWithTypeAnsIndustryTest extends BaseClass {
 			excel.updatedTestStatus("Create Organization With Industry And Type", "Fail", IConstantPath.EXCEL_FILE_PATH,
 					"OrganizationsTestData");
 		}
-		soft.assertEquals(org.getNewOrgName(), orgName);
+		soft.assertEquals(pageObjects.getOrganizationsPage().getNewOrgName(), orgName);
 		soft.assertAll();
 
 	}

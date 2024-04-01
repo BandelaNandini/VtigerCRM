@@ -36,28 +36,32 @@ public class BaseClass {
 
 	protected LoginPage login;
 	protected HomePage home;
-	protected OrganizationsPage org;
-	protected ContactsPage contact;
-	protected LeadsPage lead;
-	protected CreateNewContactPage createContact;
-	protected CreateNewOrgPage createOrg;
-	protected CreateNewLeadPage createLead;
-	protected CreateNewEventPage createEvent;
-	protected DuplicatingLeadPage leadDuplicate;
-	protected NewContactDetailPage newContact;
-	protected NewEventDetailPage newEvent;
-	protected NewLeadDetailPage newLead;
-	protected NewOrgDetailsPage newOrg;
+//	protected OrganizationsPage org;
+//	protected ContactsPage contact;
+//	protected LeadsPage lead;
+//	protected CreateNewContactPage createContact;
+//	protected CreateNewOrgPage createOrg;
+//	protected CreateNewLeadPage createLead;
+//	protected CreateNewEventPage createEvent;
+//	protected DuplicatingLeadPage leadDuplicate;
+//	protected NewContactDetailPage newContact;
+//	protected NewEventDetailPage newEvent;
+//	protected NewLeadDetailPage newLead;
+//	protected NewOrgDetailsPage newOrg;
 
+	
+	protected  JavaUtility Vtjutil;
+	protected  WebDriver Vtdriver;
 	@BeforeClass
 	public void classSetup() {
 		property = new PropertiesUtility();
 		excel = new ExcelUtility();
 		jutil = new JavaUtility();
 		web = new WebDriverUtility();
-
+Vtjutil=jutil;
 		property.propertiesInit(IConstantPath.PROPERTIES_FILE_PATH);
 		driver = web.launchBrowser(property.readFromProperties("browser"));
+		Vtdriver=driver;
 		web.waitTillElementFound(Long.parseLong(property.readFromProperties("timeouts")));
 	}
 
@@ -66,18 +70,18 @@ public class BaseClass {
 
 		login = new LoginPage(driver);
 		home = new HomePage(driver);
-		contact = new ContactsPage(driver);
-		org = new OrganizationsPage(driver);
-		createContact = new CreateNewContactPage(driver);
-		createLead = new CreateNewLeadPage(driver);
-		createOrg = new CreateNewOrgPage(driver);
-		createEvent = new CreateNewEventPage(driver);
-		leadDuplicate = new DuplicatingLeadPage(driver);
-		newContact = new NewContactDetailPage(driver);
-		newOrg = new NewOrgDetailsPage(driver);
-		newLead = new NewLeadDetailPage(driver);
-		newEvent = new NewEventDetailPage(driver);
-		lead = new LeadsPage(driver);
+//		contact = new ContactsPage(driver);
+//		org = new OrganizationsPage(driver);
+//		createContact = new CreateNewContactPage(driver);
+//		createLead = new CreateNewLeadPage(driver);
+//		createOrg = new CreateNewOrgPage(driver);
+//		createEvent = new CreateNewEventPage(driver);
+//		leadDuplicate = new DuplicatingLeadPage(driver);
+//		newContact = new NewContactDetailPage(driver);
+//		newOrg = new NewOrgDetailsPage(driver);
+//		newLead = new NewLeadDetailPage(driver);
+//		newEvent = new NewEventDetailPage(driver);
+//		lead = new LeadsPage(driver);
 		excel.excelInit(IConstantPath.EXCEL_FILE_PATH);
 		soft = new SoftAssert();
 

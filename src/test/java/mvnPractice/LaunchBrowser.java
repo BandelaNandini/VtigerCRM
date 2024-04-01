@@ -12,7 +12,8 @@ public class LaunchBrowser {
 	String browser = System.getProperty("Browser");
 	String url = System.getProperty("URL");
 	@Test
-	public void launchBrowserTest() throws InterruptedException {switch (browser) {
+	public void launchBrowserTest() throws InterruptedException {
+		switch (browser) {
 	case "chrome":
 		WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");

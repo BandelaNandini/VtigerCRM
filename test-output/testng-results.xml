@@ -2,32 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-07T13:25:57 IST" name="Default suite" finished-at="2024-03-07T13:26:31 IST" duration-ms="33982">
+  <suite started-at="2024-04-01T13:43:43 IST" name="Default suite" finished-at="2024-04-01T13:44:01 IST" duration-ms="18883">
     <groups>
     </groups>
-    <test started-at="2024-03-07T13:25:57 IST" name="Default test" finished-at="2024-03-07T13:26:31 IST" duration-ms="33982">
-      <class name="testScripts.CreateAndDeleteLeadTest">
-        <test-method is-config="true" signature="classSetup()[pri:0, instance:testScripts.CreateAndDeleteLeadTest@5c6648b0]" started-at="2024-03-07T13:25:57 IST" name="classSetup" finished-at="2024-03-07T13:25:59 IST" duration-ms="1666" status="PASS">
+    <test started-at="2024-04-01T13:43:43 IST" name="Default test" finished-at="2024-04-01T13:44:01 IST" duration-ms="18883">
+      <class name="testScripts.CreateNewEvent_Datepicker">
+        <test-method signature="createEventTest()[pri:0, instance:testScripts.CreateNewEvent_Datepicker@6adbc9d]" started-at="2024-04-01T13:43:43 IST" name="createEventTest" finished-at="2024-04-01T13:44:01 IST" duration-ms="18844" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- classSetup -->
-        <test-method is-config="true" signature="methodSetup()[pri:0, instance:testScripts.CreateAndDeleteLeadTest@5c6648b0]" started-at="2024-03-07T13:25:59 IST" name="methodSetup" finished-at="2024-03-07T13:26:04 IST" duration-ms="4997" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- methodSetup -->
-        <test-method signature="createAndDeleteLeadTest()[pri:0, instance:testScripts.CreateAndDeleteLeadTest@5c6648b0]" started-at="2024-03-07T13:26:04 IST" name="createAndDeleteLeadTest" finished-at="2024-03-07T13:26:29 IST" duration-ms="25373" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAndDeleteLeadTest -->
-        <test-method is-config="true" signature="methodTearDown()[pri:0, instance:testScripts.CreateAndDeleteLeadTest@5c6648b0]" started-at="2024-03-07T13:26:29 IST" name="methodTearDown" finished-at="2024-03-07T13:26:31 IST" duration-ms="1729" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- methodTearDown -->
-        <test-method is-config="true" signature="classTeardown()[pri:0, instance:testScripts.CreateAndDeleteLeadTest@5c6648b0]" started-at="2024-03-07T13:26:31 IST" name="classTeardown" finished-at="2024-03-07T13:26:31 IST" duration-ms="179" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- classTeardown -->
-      </class> <!-- testScripts.CreateAndDeleteLeadTest -->
+        </test-method> <!-- createEventTest -->
+      </class> <!-- testScripts.CreateNewEvent_Datepicker -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
